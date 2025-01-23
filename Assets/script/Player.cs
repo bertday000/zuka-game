@@ -7,65 +7,82 @@ using UnityEngine;
 
 public class functions : MonoBehaviour
 {
-    // [SerializeField] float horizontalspeed = 15;
-    // [SerializeField] float verticalspeed = 20;
 
+    // [SerializeField] float speed = 9.5f;
     // [SerializeField] Camera camera;
-
     void Start()
     {
-       
+
 
 
 
     }
 
+    private string firstname = "zuka";
+    private string lastname = "shonia";
+    private int myage = 15;
+    private string myhobby = "buildin legos";
 
-  
+    private string Getfullname()
+    {
+        return firstname + " " + lastname;
+    }
 
+    private string GetFullBio()
+    {
+        return "my name is " + firstname + " my last name is " + lastname + " i am " + myage + " and my hobby is " + myhobby;
+    }
+
+    // void Move()
+    // {
+    //     float horizontal = Input.GetAxisRaw("Horizontal");
+    //     float vertical = Input.GetAxisRaw("Vertical");
+    //     transform.position = transform.position + new Vector3(horizontal, vertical) * Time.deltaTime * speed;
+    // }
+
+    // void Turn()
+    // {
+    //     Vector2 mouseWorldPosition = camera.ScreenToWorldPoint(Input.mousePosition);
+    //     Vector2 lookDirection = mouseWorldPosition - (Vector2)transform.position;
+    //     float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg - 90f;
+    //     transform.rotation = Quaternion.Euler(0, 0, angle);
+    // }
 
 
     void Update()
     {
 
-        float horizontalmovement = Input.GetAxisRaw("Horizontal");
-        float verticalmovement = Input.GetAxisRaw("Vertical");
 
-        if  (horizontalmovement == 1)
+        float horizontal = Input.GetAxisRaw("Horizontal");
+        float vertical = Input.GetAxisRaw("Vertical");
+
+        if (horizontal == 1)
         {
-            Debug.Log("hi my name is zuka");
+            Debug.Log(Getfullname());
         }
-        else if (horizontalmovement == -1)
+        else if (horizontal == -1)
         {
-            Debug.Log("my last name is shonia");
+            Debug.Log("i am " + myage);
         }
-        else if (verticalmovement == 1)
+        else if (vertical == 1)
         {
-            Debug.Log("i am 15 years old");
+            Debug.Log("i like playin video games");
         }
-        else if (verticalmovement == -1)
+        else if (vertical == -1)
         {
-            Debug.Log("my hobby is buildin legos");
+            Debug.Log(GetFullBio());
         }
 
 
 
 
+        // Move();
+        // Turn();
 
-
-        //     Move();
-        //     Vector2 mouseWorldPosition = camera.ScreenToWorldPoint(Input.mousePosition);
-        //     Vector2 lookdirection = mouseWorldPosition - (Vector2)transform.position;
-        //     float angle = Mathf.Atan2(lookdirection.y, lookdirection.x) * Mathf.Rad2Deg - 90f;
-        //     transform.rotation = Quaternion.Euler(0, 0, angle);
-        // }
-
-        // private void Move()
+        // if(Input.GetMouseButtonDown(0))
         // {
-        //     float horizontalmovement = Input.GetAxisRaw("Horizontal");
-        //     float verticalmovement = Input.GetAxisRaw("Vertical");
-        //     transform.position += new Vector3(horizontalmovement * horizontalspeed, verticalmovement * verticalspeed, 0) * Time.deltaTime;
+        //     Debug.Log("visvri");
+        // }  
+
     }
-
-
 }
