@@ -3,7 +3,10 @@ guid: 1322b8d904369ba4aa1db38251057457
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - camera: {instanceID: 0}
+  - bulletPrefab: {fileID: 3800070190890864671, guid: 5afc3211569306143ab8cf03b9bfc88e, type: 3}
+  - bulletSpawnPoint: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
