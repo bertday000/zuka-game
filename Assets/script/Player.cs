@@ -13,7 +13,24 @@ public class functions : MonoBehaviour
 
     [SerializeField] GameObject bulletPrefab;
 
+    [SerializeField] GameObject ghostbulletPrefab;
+
     [SerializeField] GameObject bulletSpawnPoint;
+
+    [SerializeField] float bulletFireRateDefault = 1f;
+
+    [SerializeField] float ghostBulletFireRateDefault = 1f;
+
+    float ghostBulletFireRate;
+    float bulletFireRate;
+
+    private void Start()
+    {
+        bulletFireRate = bulletFireRateDefault;
+        ghostBulletFireRate = ghostBulletFireRateDefault;
+    }
+
+
 
 
     void Update()
@@ -22,9 +39,27 @@ public class functions : MonoBehaviour
         Move();
         Turn();
 
-        if (Input.GetMouseButtonDown(0))
+
+
+        bulletFireRate -= Time.deltaTime;
+
+        if (bulletFireRate <= 0f && Input.GetMouseButtonDown(0))
         {
-            Instantiate(bulletPrefab, bulletSpawnPoint.transform.position, transform.rotation);
+
+            {
+                Instantiate(bulletPrefab, bulletSpawnPoint.transform.position, transform.rotation);
+                bulletFireRate = bulletFireRateDefault;
+            }
+        }
+
+        ghostBulletFireRate -= Time.deltaTime;
+
+        if (ghostBulletFireRate <= 0f && Input.GetMouseButtonDown(1))
+        {
+            {
+                Instantiate(ghostbulletPrefab, bulletSpawnPoint.transform.position, transform.rotation);
+                ghostBulletFireRate = ghostBulletFireRateDefault;
+            }
         }
 
 
