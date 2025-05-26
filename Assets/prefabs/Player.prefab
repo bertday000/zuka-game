@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2450974183579409064}
-  - component: {fileID: -4091195738657810295}
   - component: {fileID: 996613723512689926}
   - component: {fileID: 8462147894774408799}
+  - component: {fileID: -4091195738657810295}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -35,27 +35,6 @@ Transform:
   - {fileID: 8889108243104189607}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-4091195738657810295
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3939062875224635437}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1322b8d904369ba4aa1db38251057457, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 9.5
-  camera: {fileID: 0}
-  bulletPrefab: {fileID: 7360876814663738914, guid: 377a4acdd474ca743ad585dd46abe12a,
-    type: 3}
-  ghostbulletPrefab: {fileID: 6819755939748399578, guid: e946aa56a7036364d81c6c73573d6d54,
-    type: 3}
-  bulletSpawnPoint: {fileID: 4686506413167170444}
-  bulletFireRateDefault: 3
-  ghostBulletFireRateDefault: 5
 --- !u!212 &996613723512689926
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -153,6 +132,30 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.33, y: 0.47}
   m_EdgeRadius: 0
+--- !u!114 &-4091195738657810295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3939062875224635437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1322b8d904369ba4aa1db38251057457, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 9.5
+  camera: {fileID: 0}
+  hp: 100
+  textMeshProUGUI: {fileID: 0}
+  bulletPrefab: {fileID: 7360876814663738914, guid: 377a4acdd474ca743ad585dd46abe12a,
+    type: 3}
+  ghostbulletPrefab: {fileID: 6819755939748399578, guid: e946aa56a7036364d81c6c73573d6d54,
+    type: 3}
+  bulletSpawnPoint: {fileID: 4686506413167170444}
+  bulletFireRateDefault: 3
+  ghostBulletFireRateDefault: 5
+  audioscource: {fileID: 0}
 --- !u!1 &4686506413167170444
 GameObject:
   m_ObjectHideFlags: 0

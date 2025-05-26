@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Xml.XPath;
+using TMPro;
 using Unity.VisualScripting;
 using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
@@ -12,6 +13,7 @@ public class player : MonoBehaviour
     [SerializeField] Camera camera;
 
     [SerializeField] float hp = 100f;
+    [SerializeField] TextMeshProUGUI textMeshProUGUI;
 
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] GameObject ghostbulletPrefab;
@@ -20,6 +22,9 @@ public class player : MonoBehaviour
     [SerializeField] float ghostBulletFireRateDefault = 1f;
 
     [SerializeField] AudioSource audioscource;
+    [SerializeField] AudioClip BulletSound;
+    [SerializeField] AudioClip strongBulletSound;
+    [SerializeField] AudioClip GameOverSound;
 
     float ghostBulletFireRate;
     float bulletFireRate;
@@ -28,6 +33,8 @@ public class player : MonoBehaviour
     {
         bulletFireRate = bulletFireRateDefault;
         ghostBulletFireRate = ghostBulletFireRateDefault;
+
+        textMeshProUGUI.text = "Health: " + hp.ToString();
     }
 
 
@@ -41,6 +48,7 @@ public class player : MonoBehaviour
         bulletFireRate -= Time.deltaTime;
         if (bulletFireRate <= 0f && Input.GetMouseButtonDown(0))
         {
+            audioscource.PlayOneShot(BulletSound); 
             Instantiate(bulletPrefab, bulletSpawnPoint.transform.position, transform.rotation);
             bulletFireRate = bulletFireRateDefault;
         }
@@ -48,6 +56,7 @@ public class player : MonoBehaviour
         ghostBulletFireRate -= Time.deltaTime;
         if (ghostBulletFireRate <= 0f && Input.GetMouseButtonDown(1))
         {
+            audioscource.PlayOneShot(strongBulletSound);
             Instantiate(ghostbulletPrefab, bulletSpawnPoint.transform.position, transform.rotation);
             ghostBulletFireRate = ghostBulletFireRateDefault;
         }
@@ -75,10 +84,12 @@ public class player : MonoBehaviour
         if (enemy != null) 
         {
             hp = hp - enemy.Damage();
+            textMeshProUGUI.text = "Health: " + hp.ToString();
         }
 
         if (hp <= 0)
         {
+            audioscource.PlayOneShot(GameOverSound);
             Destroy(gameObject);
         }
     }
