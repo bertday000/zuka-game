@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -3414746640453740846}
   - component: {fileID: 2484715623837479691}
   - component: {fileID: 2362246055560535934}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ghostBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -173,3 +173,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: -3414746640453740846}
   bulletspeed: 20
+  damage: 15
+  destroyOnContact: 0

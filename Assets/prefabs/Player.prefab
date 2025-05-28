@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 996613723512689926}
   - component: {fileID: 8462147894774408799}
   - component: {fileID: -4091195738657810295}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -156,6 +156,9 @@ MonoBehaviour:
   bulletFireRateDefault: 3
   ghostBulletFireRateDefault: 5
   audioscource: {fileID: 0}
+  BulletSound: {fileID: 0}
+  strongBulletSound: {fileID: 0}
+  GameOverSound: {fileID: 0}
 --- !u!1 &4686506413167170444
 GameObject:
   m_ObjectHideFlags: 0
@@ -165,7 +168,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8889108243104189607}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: bulletSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
