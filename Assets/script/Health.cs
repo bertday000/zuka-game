@@ -5,10 +5,11 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     [SerializeField] float health = 1f;
+    Score score;
 
     void Start()
     {
-        
+        score = GameObject.FindWithTag("Score").GetComponent<Score>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -22,6 +23,7 @@ public class Health : MonoBehaviour
 
         if (health <= 0)
         {
+            score.IncreaseScore();
             Destroy(gameObject);
         }
     }
