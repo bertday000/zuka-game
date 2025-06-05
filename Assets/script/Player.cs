@@ -6,7 +6,7 @@ using Unity.VisualScripting;
 using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 
-public class player : MonoBehaviour
+public class Player : MonoBehaviour
 {
 
     [SerializeField] float speed = 9.5f;
