@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
+    [SerializeField] AudioSource audioScource;
+    [SerializeField] AudioClip explosionSound;
+    [SerializeField] AudioClip audioClip;
+    [SerializeField] enemy enemy;
+    [SerializeField] CircleCollider2D col;
+    [SerializeField] SpriteRenderer spriterenderer;
     [SerializeField] float health = 1f;
     Score score;
 
@@ -23,8 +29,15 @@ public class Health : MonoBehaviour
 
         if (health <= 0)
         {
+            enemy.enabled = false;
+            col.enabled = false;
+            spriterenderer.enabled = false;
+
             score.IncreaseScore();
-            Destroy(gameObject);
+            audioScource.PlayOneShot(explosionSound);
+            Destroy(gameObject, audioClip.length);
         }
+
+
     }
 }
