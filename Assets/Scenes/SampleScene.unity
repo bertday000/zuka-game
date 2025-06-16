@@ -795,6 +795,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!61 &1036322967 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 8462147894774408799, guid: 70807efebdc99e54b83cfd0755b95c9c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1450000564}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &1036322968 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 996613723512689926, guid: 70807efebdc99e54b83cfd0755b95c9c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1450000564}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1130340434
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -990,6 +1002,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -4091195738657810295, guid: 70807efebdc99e54b83cfd0755b95c9c,
         type: 3}
+      propertyPath: col
+      value: 
+      objectReference: {fileID: 1036322967}
+    - target: {fileID: -4091195738657810295, guid: 70807efebdc99e54b83cfd0755b95c9c,
+        type: 3}
       propertyPath: camera
       value: 
       objectReference: {fileID: 1214308506}
@@ -1013,6 +1030,11 @@ PrefabInstance:
       propertyPath: GameOverSound
       value: 
       objectReference: {fileID: 8300000, guid: d5ba68a8fb32ba54caad4acbd2bfc670, type: 3}
+    - target: {fileID: -4091195738657810295, guid: 70807efebdc99e54b83cfd0755b95c9c,
+        type: 3}
+      propertyPath: spriteRenderer
+      value: 
+      objectReference: {fileID: 1036322968}
     - target: {fileID: -4091195738657810295, guid: 70807efebdc99e54b83cfd0755b95c9c,
         type: 3}
       propertyPath: textMeshProUGUI

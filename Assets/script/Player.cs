@@ -20,11 +20,13 @@ public class Player : MonoBehaviour
     [SerializeField] GameObject bulletSpawnPoint;
     [SerializeField] float bulletFireRateDefault = 1f;
     [SerializeField] float ghostBulletFireRateDefault = 1f;
-
     [SerializeField] AudioSource audioscource;
     [SerializeField] AudioClip BulletSound;
     [SerializeField] AudioClip strongBulletSound;
     [SerializeField] AudioClip GameOverSound;
+    [SerializeField] Player player;
+    [SerializeField] BoxCollider2D col;
+    [SerializeField] SpriteRenderer spriteRenderer;
 
     float ghostBulletFireRate;
     float bulletFireRate;
@@ -89,8 +91,11 @@ public class Player : MonoBehaviour
 
         if (hp <= 0)
         {
+            player.enabled = false;
+            col.enabled = false;
+            spriteRenderer.enabled = false;
             audioscource.PlayOneShot(GameOverSound);
-            Destroy(gameObject);
+            Destroy(gameObject, GameOverSound.length);
         }
     }
 
