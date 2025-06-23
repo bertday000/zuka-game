@@ -27,6 +27,7 @@ public class Player : MonoBehaviour
     [SerializeField] Player player;
     [SerializeField] BoxCollider2D col;
     [SerializeField] SpriteRenderer spriteRenderer;
+    [SerializeField] SceneLoader sceneLoader;
 
     float ghostBulletFireRate;
     float bulletFireRate;
@@ -96,6 +97,7 @@ public class Player : MonoBehaviour
             spriteRenderer.enabled = false;
             audioscource.PlayOneShot(GameOverSound);
             Destroy(gameObject, GameOverSound.length);
+            sceneLoader.LoadGameOverUi();
         }
     }
 
